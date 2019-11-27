@@ -14,11 +14,11 @@ class Solution {
                     dp[currPos][stepsAllowed] = dp[currPos][stepsAllowed - 1];
                     
                     if(currPos > 0) {
-                        dp[currPos][stepsAllowed] = (dp[currPos][stepsAllowed]%MOD + dp[currPos - 1][stepsAllowed - 1]%MOD)%MOD ;
+                        dp[currPos][stepsAllowed] = (dp[currPos][stepsAllowed] + dp[currPos - 1][stepsAllowed - 1])%MOD ;
                     }
                     
                     if(currPos < dp.length - 1) {
-                        dp[currPos][stepsAllowed] = (dp[currPos][stepsAllowed]%MOD + dp[currPos + 1][stepsAllowed - 1]%MOD)%MOD ;
+                        dp[currPos][stepsAllowed] = (dp[currPos][stepsAllowed] + dp[currPos + 1][stepsAllowed - 1])%MOD ;
                     }
                 }
             }
